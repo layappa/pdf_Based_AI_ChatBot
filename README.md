@@ -27,7 +27,7 @@ Ask questions about your PDF documents using an AI-powered chatbot with semantic
 │  Hybrid Search ◄────────────────────────┤               │
 │       │                                 │               │
 │       ▼                          Embeddings             │
-│  Claude API ◄──── Context ◄──── (MiniLM-L6-v2)         │
+│  OpenRouter ◄──── Context ◄──── (MiniLM-L6-v2)         │
 │       │                                                  │
 │       ▼                                                  │
 │  SSE Stream ──► browser                                  │
@@ -83,7 +83,7 @@ Ask questions about your PDF documents using an AI-powered chatbot with semantic
    ```bash
    cd backend
    cp .env.example .env
-   # Edit .env — set GEMINI_API_KEY (free at https://aistudio.google.com/app/apikey)
+   # Edit .env — set OPENROUTER_API_KE (free at https://openrouter.ai/)
    pip install -r requirements.txt
    python start.py
    # Backend runs at http://localhost:8000
@@ -108,7 +108,7 @@ Ask questions about your PDF documents using an AI-powered chatbot with semantic
 1. **Configure environment:**
    ```bash
    cp backend/.env.example backend/.env
-   # Edit backend/.env with your ANTHROPIC_API_KEY
+   # Edit backend/.env with your OPENROUTER_API_KE
    ```
 
 2. **Build and run:**
@@ -124,8 +124,8 @@ Ask questions about your PDF documents using an AI-powered chatbot with semantic
 
 | Variable | Required | Default | Description |
 |---|---|---|---|
-| `GEMINI_API_KEY` | ✅ Yes | — | Free key from https://aistudio.google.com/app/apikey |
-| `GEMINI_MODEL` | No | `gemini-2.0-flash` | Gemini model (flash = free tier) |
+| `OPENROUTER_API_KE` | ✅ Yes | — | Free key from https://openrouter.ai/ |
+| `OPENROUTER_MODELS` | No | `openrouter/free` |
 | `EMBEDDING_MODEL` | No | `all-MiniLM-L6-v2` | Sentence-transformers model |
 | `CHROMA_PERSIST_DIR` | No | `./chroma_data` | ChromaDB storage path |
 
