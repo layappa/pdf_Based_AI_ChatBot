@@ -1,0 +1,245 @@
+.sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.sidebar-logo svg {
+  color: var(--accent);
+}
+
+.sidebar-section {
+  padding: 12px;
+}
+
+.upload-zone {
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 20px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.upload-zone:hover {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  color: var(--accent-hover);
+}
+
+.upload-zone.uploading {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  color: var(--accent);
+  cursor: not-allowed;
+}
+
+.upload-zone p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.upload-zone strong {
+  color: var(--text-primary);
+}
+
+.upload-hint {
+  color: var(--text-muted);
+  font-size: 0.75rem !important;
+}
+
+.docs-section {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.section-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.btn-text {
+  background: none;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color var(--transition);
+}
+
+.btn-text:hover {
+  color: var(--accent);
+}
+
+.doc-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.doc-item {
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+  padding-right: 4px;
+}
+
+.doc-item:hover {
+  background: var(--bg-tertiary);
+}
+
+.doc-item.selected {
+  background: var(--accent-subtle);
+}
+
+.doc-toggle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  padding: 6px 8px;
+  color: var(--text-primary);
+  text-align: left;
+  min-width: 0;
+}
+
+.check-icon {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.check-icon.muted {
+  color: var(--text-muted);
+}
+
+.file-icon {
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}
+
+.doc-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.doc-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-primary);
+}
+
+.doc-meta {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.doc-delete {
+  opacity: 0;
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: 4px;
+  transition: all var(--transition);
+}
+
+.doc-item:hover .doc-delete {
+  opacity: 1;
+}
+
+.doc-delete:hover {
+  color: var(--error);
+  background: var(--error-subtle);
+}
+
+.selection-hint {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 4px 0;
+}
+
+.sidebar-footer {
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.sidebar-footer p {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.btn-icon {
+  background: none;
+  color: var(--text-muted);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+
+.btn-icon:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
