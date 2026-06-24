@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Send, Loader2, FileQuestion, Sparkles } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm'; // ADDED: Import the GitHub Flavored Markdown plugin
 import SourceCard from './SourceCard';
 import './ChatArea.css';
 
@@ -249,7 +250,10 @@ function MessageBubble({ message }) {
           <>
             {message.content ? (
               <div className="markdown-content">
-                <ReactMarkdown>{message.content}</ReactMarkdown>
+                {/* ADDED: The remarkPlugins property to render tables correctly */}
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {message.content}
+                </ReactMarkdown>
               </div>
             ) : (
               <div className="thinking">
